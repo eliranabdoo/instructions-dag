@@ -8,5 +8,18 @@
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "supabase"
-  ]
+  ],
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/eliran/code/instructions-dag/.claude/hooks/docs-sync.sh"
+          }
+        ]
+      }
+    ]
+  }
 }
